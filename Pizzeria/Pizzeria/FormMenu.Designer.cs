@@ -120,9 +120,9 @@
             this.pictureBox1.BackgroundImage = global::Pizzeria.Properties.Resources._1606060742729;
             this.pictureBox1.ErrorImage = null;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(327, 237);
+            this.pictureBox1.Location = new System.Drawing.Point(338, 252);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(839, 360);
+            this.pictureBox1.Size = new System.Drawing.Size(828, 345);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;

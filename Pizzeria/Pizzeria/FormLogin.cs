@@ -40,13 +40,13 @@ namespace Pizzeria
             usuario = textBox1.Text;
             contraseña = textBox2.Text;
 
-            if (usuario == "admin"   && contraseña == "123")
+            if (usuario == "admin" || usuario == "vt01"   && contraseña == "123")
                 {
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Usuario y contrasema incorrectos");
+                MessageBox.Show("Usuario y contraseña incorrectos");
             }
         }
     }
