@@ -40,7 +40,7 @@ namespace Pizzeria
             usuario = textBox1.Text;
             contraseña = textBox2.Text;
 
-            if (usuario == "admin"  && contraseña == "123")
+            if (usuario == "admin"   && contraseña == "123")
                 {
                 this.Close();
             }
