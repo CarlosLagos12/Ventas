@@ -15,7 +15,7 @@ namespace Pizzeria
     {
         SeguridadBL _seguridad;
 
-        public FormLogin()
+       public FormLogin()
         {
             InitializeComponent();
 
@@ -39,22 +39,62 @@ namespace Pizzeria
 
         private void button1_Click(object sender, EventArgs e)
         {
+            login();
+        }
+         
+        private void login()
+        {
             string usuario;
             string contraseña;
 
             usuario = textBox1.Text;
             contraseña = textBox2.Text;
 
+            button1.Enabled = false;
+            button1.Text = "Verificando...";
+            Application.DoEvents();
+
             var resultado = _seguridad.Autorizar(usuario, contraseña);
 
-            if (resultado == true)
+            if (resultado != null)
             {
+                Utilidades.NombreUsuario = resultado.Nombre;
                 this.Close();
             }
             else
             {
                 MessageBox.Show("Usuario o contraseña incorrecta");
             }
+
+            button1.Enabled = true;
+            button1.Text = "Aceptar";
+        }
+
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter && textBox1.Text != "")
+            {
+                textBox2.Focus();
+            }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter && textBox1.Text != "" && textBox2.Text !="")
+            {
+                login();
+            }
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
